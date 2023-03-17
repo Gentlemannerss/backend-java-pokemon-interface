@@ -49,7 +49,7 @@ public class WaterPokemon extends Pokemon {
             System.out.println("This has no effect on the " + enemy.getName());
         } else if (enemy.getType().equals("grass")) {
             enemy.Hp += damage;
-            System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
+            System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP thanks to Rain Dance.");
         } else {
             enemy.Hp -= damage;
             System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");

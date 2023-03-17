@@ -3,7 +3,7 @@ import java.util.List;
 
 public class GrassPokemon extends Pokemon {
     int damage;
-    List<String> attacks = Arrays.asList("leafstorm", "solarbeam", "leechseed", "leaveblade");
+    List<String> attacks = Arrays.asList("leafstorm", "solarbeam", "leechseed", "leafblade");
 
     // ---------------------- Constructor ------------------
     public GrassPokemon(String name, int level, int hp, String food, String sound) {
@@ -21,22 +21,28 @@ public class GrassPokemon extends Pokemon {
 
     // --------------------- Attacks --------------------
     public void leafStorm(Pokemon name, Pokemon enemy) {
-        System.out.println("The pokemon uses Thunder Punch.");
+        damage = 30;
+        System.out.println("The pokemon uses Leaf Storm.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
     public void solarBeam(Pokemon name, Pokemon enemy) {
-        System.out.println("The pokemon uses Thunder Punch.");
+        damage = 40;
+        System.out.println("The pokemon uses Solar Beam.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
     public void leechSeed(Pokemon name, Pokemon enemy) {
-        System.out.println("The pokemon uses Thunder Punch.");
+        damage = 15;
+        System.out.println("The pokemon uses Leech Seed.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
+        name.Hp += damage;
+        System.out.println("Name " + name.getName() + " now has " + name.getHp() + " HP.");
     }
-    public void leaveBlade(Pokemon name, Pokemon enemy) {
-        System.out.println("The pokemon uses Thunder Punch.");
+    public void leafBlade(Pokemon name, Pokemon enemy) {
+        damage = 25;
+        System.out.println("The pokemon uses Leaf Blade.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
