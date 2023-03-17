@@ -1,7 +1,7 @@
 public abstract class Pokemon {
     private String Name;
     private int Level;
-    private int Hp;
+    int Hp;
     private String Food;
     private String Sound;
 

@@ -2,13 +2,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class WaterPokemon extends Pokemon {
-
+    int damage;
     List<String> attacks = Arrays.asList("surf", "hydropump", "hydrocanon", "raindance");
 
+    // ---------------------- Constructor ------------------
     public WaterPokemon(String name, int level, int hp, String food, String sound) {
         super(name, level, hp, food, sound);
     }
 
+    // ---------------------  Getters & Setters --------------
     public String getType() {
         return "water";
     }
@@ -17,17 +19,40 @@ public class WaterPokemon extends Pokemon {
         return attacks;
     }
 
+    // --------------------- Attacks --------------------
     void surf(Pokemon name, Pokemon enemy) {
-        System.out.println("The pokemon uses Thunder Punch.");
+        damage = 30;
+        System.out.println("The pokemon uses Surf.");
+        enemy.Hp -= damage;
+        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
 
     }
+
     void hydroPump(Pokemon name, Pokemon enemy) {
-        System.out.println("The pokemon uses Thunder Punch.");
+        damage = 25;
+        System.out.println("The pokemon uses Hydro Pump.");
+        enemy.Hp -= damage;
+        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
+
     void hydroCanon(Pokemon name, Pokemon enemy) {
-        System.out.println("The pokemon uses Thunder Punch.");
+        damage = 40;
+        System.out.println("The pokemon uses Hydro Cannon.");
+        enemy.Hp -= damage;
+        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
+
     void rainDance(Pokemon name, Pokemon enemy) {
-        System.out.println("The pokemon uses Thunder Punch.");
+        damage = 5;
+        System.out.println("The pokemon uses Rain Dance.");
+        if (enemy.getType().equals("electric")) {
+            System.out.println("This has no effect on the " + enemy.getName());
+        } else if (enemy.getType().equals("grass")) {
+            enemy.Hp += damage;
+            System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
+        } else {
+            enemy.Hp -= damage;
+            System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
+        }
     }
 }
