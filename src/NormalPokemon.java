@@ -4,7 +4,7 @@ import java.util.List;
 public class NormalPokemon extends Pokemon {
 
     int damage;
-    List<String> attacks = Arrays.asList(/* Insert 4 normal type moves*/);
+    List<String> attacks = Arrays.asList("tackle", "hyperbeam", "bodyslam", "headbutt");
 
     // ---------------------- Constructor ------------------
     public NormalPokemon(String name, int level, int hp, String food, String sound) {
@@ -13,7 +13,7 @@ public class NormalPokemon extends Pokemon {
 
     // ---------------------  Getters & Setters --------------
     public String getType() {
-        return "fire";
+        return "normal";
     }
 
     List<String> getAttacks() {
@@ -21,33 +21,29 @@ public class NormalPokemon extends Pokemon {
     }
 
     // --------------------- Attacks --------------------
-    void fireLash(Pokemon name, Pokemon enemy) {
+    void tackle(Pokemon name, Pokemon enemy) {
         damage = 20;
-        System.out.println("The pokemon uses Fire Lash, and deals " + damage + " damage.");
+        System.out.println("The pokemon uses Tackle, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        /* ---- This would only damage the pokemon that uses the move. (usefully for confusion)
-        name.Hp -= damage;
-        System.out.println("Your " + name.getName() + " now has " + name.getHp() + " HP.");
-        */
     }
-    void flameThrower(Pokemon name, Pokemon enemy) {
+    void hyperBeam(Pokemon name, Pokemon enemy) {
         damage = 40;
-        System.out.println("The pokemon uses Flamethrower.");
+        System.out.println("The pokemon uses Hyper Beam, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
-    void pyroBall(Pokemon name, Pokemon enemy) {
+    void bodySlam(Pokemon name, Pokemon enemy) {
         damage = 30;
-        System.out.println("The pokemon uses Pyro Ball.");
+        System.out.println("The pokemon uses Pyro Ball, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
-    void inferno(Pokemon name, Pokemon enemy) {
+    void headbutt(Pokemon name, Pokemon enemy) {
         damage = 25;
-        System.out.println("The pokemon uses Inferno.");
+        System.out.println("The pokemon uses Inferno, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
 }
-}
+
