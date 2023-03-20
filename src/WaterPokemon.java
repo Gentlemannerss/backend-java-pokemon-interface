@@ -22,7 +22,7 @@ public class WaterPokemon extends Pokemon {
     // --------------------- Attacks --------------------
     void surf(Pokemon name, Pokemon enemy) {
         damage = 30;
-        System.out.println("The pokemon uses Surf.");
+        System.out.println("The pokemon uses Surf, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
 
@@ -30,14 +30,14 @@ public class WaterPokemon extends Pokemon {
 
     void hydroPump(Pokemon name, Pokemon enemy) {
         damage = 25;
-        System.out.println("The pokemon uses Hydro Pump.");
+        System.out.println("The pokemon uses Hydro Pump, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
 
     void hydroCanon(Pokemon name, Pokemon enemy) {
         damage = 40;
-        System.out.println("The pokemon uses Hydro Cannon.");
+        System.out.println("The pokemon uses Hydro Cannon, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }

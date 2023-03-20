@@ -22,19 +22,19 @@ public class ElectricPokemon extends Pokemon {
     // --------------------- Attacks --------------------
     void thunderPunch(Pokemon name, Pokemon enemy) {
         damage = 30;
-        System.out.println("The pokemon uses Thunder Punch.");
+        System.out.println("The pokemon uses Thunder Punch, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
     void electroBall(Pokemon name, Pokemon enemy) {
         damage = 25;
-        System.out.println("The pokemon uses Electro Ball.");
+        System.out.println("The pokemon uses Electro Ball, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
     void thunder(Pokemon name, Pokemon enemy) {
         damage = 40;
-        System.out.println("The pokemon uses Thunder.");
+        System.out.println("The pokemon uses Thunder, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
         if (enemy.getType().equals("electric") || name.getType().equals("electric")) {
@@ -52,7 +52,7 @@ public class ElectricPokemon extends Pokemon {
     }
     void voltTackle(Pokemon name, Pokemon enemy) {
         damage = 20;
-        System.out.println("The pokemon uses Volt Tackle.");
+        System.out.println("The pokemon uses Volt Tackle, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }

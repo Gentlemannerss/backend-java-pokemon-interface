@@ -22,13 +22,13 @@ public class GrassPokemon extends Pokemon {
     // --------------------- Attacks --------------------
     public void leafStorm(Pokemon name, Pokemon enemy) {
         damage = 30;
-        System.out.println("The pokemon uses Leaf Storm.");
+        System.out.println("The pokemon uses Leaf Storm, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
     public void solarBeam(Pokemon name, Pokemon enemy) {
         damage = 40;
-        System.out.println("The pokemon uses Solar Beam.");
+        System.out.println("The pokemon uses Solar Beam, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
@@ -42,7 +42,7 @@ public class GrassPokemon extends Pokemon {
     }
     public void leafBlade(Pokemon name, Pokemon enemy) {
         damage = 25;
-        System.out.println("The pokemon uses Leaf Blade.");
+        System.out.println("The pokemon uses Leaf Blade, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
     }
