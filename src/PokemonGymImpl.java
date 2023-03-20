@@ -229,10 +229,10 @@ public class PokemonGymImpl implements PokemonGym {
                 normal = new NormalPokemon(gymPokemon.getName(), gymPokemon.getLevel(), gymPokemon.getHp(), gymPokemon.getFood(), gymPokemon.getSound());
                 String attack = normal.getAttacks().get(randomAttackByGymOwner());
                 switch (attack) {
-                    case "hyperbeam" -> normal.hyperBeam(pokemon, gymPokemon);
-                    case "bodyslam" -> normal.bodySlam(pokemon, gymPokemon);
-                    case "headbutt" -> normal.headbutt(pokemon, gymPokemon);
-                    default -> normal.tackle(pokemon, gymPokemon);
+                    case "hyperbeam" -> normal.hyperBeam(gymPokemon, pokemon);
+                    case "bodyslam" -> normal.bodySlam(gymPokemon, pokemon);
+                    case "headbutt" -> normal.headbutt(gymPokemon, pokemon);
+                    default -> normal.tackle(gymPokemon, pokemon);
                 }
             }
             case "water" -> {
