@@ -132,6 +132,12 @@ public class PokemonGymImpl implements PokemonGym {
                 System.out.println(ep.getAttacks());
                 return speler_A.nextLine();
             }
+            case "normal" -> {
+                NormalPokemon np = (NormalPokemon) p;
+                System.out.println("Choose your attack");
+                System.out.println(np.getAttacks());
+                return speler_A.nextLine();
+            }
             default -> {
                 GrassPokemon gp = (GrassPokemon) p;
                 System.out.println("Choose your attack");
@@ -147,6 +153,7 @@ public class PokemonGymImpl implements PokemonGym {
         ElectricPokemon electric;
         GrassPokemon grass;
         WaterPokemon water;
+        NormalPokemon normal;
 
         String choosenAttack = attack.toLowerCase(Locale.ROOT);
 
@@ -158,6 +165,15 @@ public class PokemonGymImpl implements PokemonGym {
                     case "pyroball" -> fire.pyroBall(pokemon, gymPokemon);
                     case "firelash" -> fire.fireLash(pokemon, gymPokemon);
                     default -> fire.flameThrower(pokemon, gymPokemon);
+                }
+            }
+            case "normal" -> {
+                normal = new NormalPokemon(pokemon.getName(), pokemon.getLevel(), pokemon.getHp(), pokemon.getFood(), pokemon.getSound());
+                switch (choosenAttack) {
+                    case "hyperbeam" -> normal.hyperBeam(pokemon, gymPokemon);
+                    case "bodyslam" -> normal.bodySlam(pokemon, gymPokemon);
+                    case "headbutt" -> normal.headbutt(pokemon, gymPokemon);
+                    default -> normal.tackle(pokemon, gymPokemon);
                 }
             }
             case "water" -> {
@@ -196,6 +212,7 @@ public class PokemonGymImpl implements PokemonGym {
         ElectricPokemon electric;
         GrassPokemon grass;
         WaterPokemon water;
+        NormalPokemon normal;
 
         switch (gymPokemon.getType()) {
             case "fire" -> {
@@ -206,6 +223,16 @@ public class PokemonGymImpl implements PokemonGym {
                     case "pyroBall" -> fire.pyroBall(gymPokemon, pokemon);
                     case "fireLash" -> fire.fireLash(gymPokemon, pokemon);
                     default -> fire.flameThrower(gymPokemon, pokemon);
+                }
+            }
+            case "normal" -> {
+                normal = new NormalPokemon(gymPokemon.getName(), gymPokemon.getLevel(), gymPokemon.getHp(), gymPokemon.getFood(), gymPokemon.getSound());
+                String attack = normal.getAttacks().get(randomAttackByGymOwner());
+                switch (attack) {
+                    case "hyperbeam" -> normal.hyperBeam(pokemon, gymPokemon);
+                    case "bodyslam" -> normal.bodySlam(pokemon, gymPokemon);
+                    case "headbutt" -> normal.headbutt(pokemon, gymPokemon);
+                    default -> normal.tackle(pokemon, gymPokemon);
                 }
             }
             case "water" -> {
