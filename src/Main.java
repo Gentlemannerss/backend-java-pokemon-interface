@@ -11,7 +11,7 @@ public class Main {
 
     // Dit zijn de Pokemons die je tot je beschikking hebt
     private static final FirePokemon charizard = new FirePokemon("Charrizard", 76, 150, "firenougats", "GRRRRRRRRRRRRRRR");
-    private static final WaterPokemon blastoise = new WaterPokemon("Blastoise", 40, 110, "Pokeflakes", "Blaaaaasssssstooooiiiiissss");
+    private static final WaterPokemon blastoise = new WaterPokemon("Blastoise", 60, 155, "Pokeflakes", "Blaaaaasssssstooooiiiiissss");
     private static final GrassPokemon venusaur = new GrassPokemon("Venusaur", 50, 135, "Pokeleafs", "Veeeeeeeeennnnnuuuuuusaur");
     private static final NormalPokemon ditto = new NormalPokemon("Ditto", 60, 140, "Everything", "Dittto diiiito ");
     private static final ElectricPokemon raichu = new ElectricPokemon("Raichu", 80, 160, "Pokebrocks", "Raaaaiiiiicccchhhhuuuuuuu!!!!");
@@ -36,8 +36,5 @@ public class Main {
         if (speler_A.nextLine().equals("yes")) {
             pokemonGym.enteredTheGym(player1);
         }
-
     }
-
-
 }
