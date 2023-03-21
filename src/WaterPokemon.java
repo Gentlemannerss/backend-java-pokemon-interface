@@ -20,12 +20,30 @@ public class WaterPokemon extends Pokemon {
     }
 
     // --------------------- Attacks --------------------
+
+    public void damageCalculator(Pokemon name, Pokemon enemy, int damage) {
+        switch (enemy.getType()) {
+            case "fire":
+                damage = damage * 2;
+                break;
+            case "grass":
+            case "electric":
+                damage *= 0.5;
+                break;
+            default: //handles Water & Normal
+                // handle other types not mentioned in the switch statement
+                break;
+        }
+    }
+
     void surf(Pokemon name, Pokemon enemy) {
         damage = 30;
         System.out.println("The pokemon uses Surf, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-
+        damageCalculator(name, enemy, damage);
+        if (enemy.getHp()<0)
+            System.out.println(enemy.getName()+ " has fainted");
     }
 
     void hydroPump(Pokemon name, Pokemon enemy) {
@@ -33,6 +51,8 @@ public class WaterPokemon extends Pokemon {
         System.out.println("The pokemon uses Hydro Pump, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
+        if (enemy.getHp()<0)
+            System.out.println(enemy.getName()+ " has fainted");
     }
 
     void hydroCanon(Pokemon name, Pokemon enemy) {
@@ -40,6 +60,8 @@ public class WaterPokemon extends Pokemon {
         System.out.println("The pokemon uses Hydro Cannon, and deals " + damage + " damage.");
         enemy.Hp -= damage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
+        if (enemy.getHp()<0)
+            System.out.println(enemy.getName()+ " has fainted");
     }
 
     void rainDance(Pokemon name, Pokemon enemy) {
@@ -54,5 +76,7 @@ public class WaterPokemon extends Pokemon {
             enemy.Hp -= damage;
             System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
         }
+        if (enemy.getHp()<0)
+            System.out.println(enemy.getName()+ " has fainted");
     }
 }
