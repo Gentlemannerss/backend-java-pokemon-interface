@@ -51,7 +51,7 @@ public class PokemonGymImpl implements PokemonGym {
         while (pokemon.getHp() > 0 && gymPokemon.getHp() > 0) {
 
             System.out.println("Its " + owner.getName() + "'s turn to attack");
-            gymOwnerAttacks(gymPokemon, pokemon);
+            gymOwnerAttacks(gymPokemon, pokemon, trainer, owner);
             System.out.println("Its " + trainer.getName() + "'s turn to attack");
             attackOrChange(pokemon, gymPokemon, trainer, owner);
 
@@ -148,7 +148,7 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack){
+    public void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack, PokemonTrainer trainer, PokemonGymOwner owner){
         FirePokemon fire;
         ElectricPokemon electric;
         GrassPokemon grass;
@@ -164,7 +164,7 @@ public class PokemonGymImpl implements PokemonGym {
                     case "inferno" -> fire.inferno(pokemon, gymPokemon);
                     case "pyroball" -> fire.pyroBall(pokemon, gymPokemon);
                     case "firelash" -> fire.fireLash(pokemon, gymPokemon);
-                    default -> fire.flameThrower(pokemon, gymPokemon);
+                    default -> fire.flameThrower(pokemon, gymPokemon, trainer, owner);
                 }
             }
             case "normal" -> {
@@ -207,7 +207,7 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon){
+    public void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon, PokemonTrainer trainer, PokemonGymOwner owner){
         FirePokemon fire;
         ElectricPokemon electric;
         GrassPokemon grass;
@@ -222,7 +222,7 @@ public class PokemonGymImpl implements PokemonGym {
                     case "inferno" -> fire.inferno(gymPokemon, pokemon);
                     case "pyroBall" -> fire.pyroBall(gymPokemon, pokemon);
                     case "fireLash" -> fire.fireLash(gymPokemon, pokemon);
-                    default -> fire.flameThrower(gymPokemon, pokemon);
+                    default -> fire.flameThrower(gymPokemon, pokemon, trainer, owner);
                 }
             }
             case "normal" -> {
@@ -278,7 +278,7 @@ public class PokemonGymImpl implements PokemonGym {
 
         if (choice.equalsIgnoreCase("a")) {
             String attack = chooseAttackPlayer(pokemon);
-            performAttackPlayer(pokemon, gymPokemon, attack);
+            performAttackPlayer(pokemon, gymPokemon, attack ,trainer, gym);
         } else {
             pokemon = choosePokemon(trainer);
             attackOrChange(pokemon, gymPokemon, trainer, gym);

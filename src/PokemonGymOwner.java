@@ -8,7 +8,9 @@ public class PokemonGymOwner extends PokemonTrainer {
         this.town = town;
     }
 
+    // ---------------------  Getters & Setters --------------
     public String getTown() {
         return town;
     }
+
 }

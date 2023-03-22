@@ -44,14 +44,15 @@ public class FirePokemon extends Pokemon {
         if (enemy.getHp()<0)
             System.out.println(enemy.getName()+ " has fainted");
     }
-    void flameThrower(Pokemon name, Pokemon enemy) {
+    void flameThrower(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonGymOwner owner) {
         damage = 40;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Flamethrower, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        if (trainer.getName().equals(trainer.getName())) {
+            System.out.println(trainer.getName() + "'s " + name.getName() + " uses Flamethrower against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
+        } else if (owner.getName().equals(owner.getName())) {
+            System.out.println(owner.getName() + "'s " + enemy.getName() + " uses Flamethrower against " + trainer.getName() + "'s " + name.getName() + " and deals " + totalDamage + " damage." + " and now has " + name.getHp() + " HP.");
+        }
     }
     void pyroBall(Pokemon name, Pokemon enemy) {
         damage = 30;

@@ -4,6 +4,7 @@ public abstract class Pokemon {
     int Hp;
     private final String Food;
     private final String Sound;
+    private PokemonTrainer trainer;
 
 
     public Pokemon(String name, int level, int hp, String food, String sound) {
@@ -25,13 +26,19 @@ public abstract class Pokemon {
     public int getHp() {
         return Hp;
     }
-    public void setHp(int hp) {
-        Hp = hp;
-    }
     public String getFood() {
         return Food;
     }
     public String getSound() {
         return Sound;
+    }
+    public PokemonTrainer getTrainer() {
+        return trainer;
+    }
+    public void setTrainer(PokemonTrainer trainer) {
+        this.trainer = trainer;
+    }
+    public void setHp(int hp) {
+        Hp = hp;
     }
 }
