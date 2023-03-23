@@ -36,7 +36,7 @@ public class NormalPokemon extends Pokemon {
         damage = 20;
         boolean ifConfused = Math.random() < 0.1;
         if (ifConfused) {
-            System.out.println(trainer.getName() + "'s "+ name.getName() + " is Confused and hits itself, and now has " + enemy.getHp() + " HP.");
+            System.out.println(trainer.getName() + "'s "+ name.getName() + " is Confused and hits itself, and now has " + name.getHp() + " HP.");
             name.Hp -= damage;
         } else {
             int totalDamage = damageCalculator(name, enemy, damage);
