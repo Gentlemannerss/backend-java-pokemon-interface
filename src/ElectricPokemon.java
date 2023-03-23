@@ -31,51 +31,41 @@ public class ElectricPokemon extends Pokemon {
     }
 
     // --------------------- Attacks --------------------
-    void thunderPunch(Pokemon name, Pokemon enemy) {
+    void thunderPunch(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 30;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Thunder Punch, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Thunder Punch against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    void electroBall(Pokemon name, Pokemon enemy) {
+    void electroBall(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 25;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Electro Ball, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Electro Ball against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    void thunder(Pokemon name, Pokemon enemy) {
+    void thunder(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 40;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Thunder, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getType().equals("electric") || name.getType().equals("electric")) {
-            if (enemy.getType().equals("electric")) {
-                enemy.setHp(enemy.getHp() + 20);
-                System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP thanks to the weather.");
-            } else {
-                name.setHp(name.getHp() + 20);
-                System.out.println(name.getName() + " now has " + name.getHp() + " HP thanks to the weather.");
-            }
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Thunder against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
+        if (enemy.getType().equals("electric") && name.getType().equals("electric")) {
+            enemy.setHp(enemy.getHp() + 20);
+            name.setHp(name.getHp() + 20);
+            System.out.println();
+        } else if (enemy.getType().equals("electric")) {
+            enemy.setHp(enemy.getHp() + 20);
+            System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP thanks to the weather.");
+        } else if (name.getType().equals("electric")) {
+            name.setHp(name.getHp() + 20);
+            System.out.println(name.getName() + " now has " + name.getHp() + " HP thanks to the weather.");
         } else {
             System.out.println("The field turned Static.");
         }
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
     }
-    void voltTackle(Pokemon name, Pokemon enemy) {
+    void voltTackle(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 20;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Volt Tackle, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Volt Tackle against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
 }

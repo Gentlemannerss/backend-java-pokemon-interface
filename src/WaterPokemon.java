@@ -25,58 +25,46 @@ public class WaterPokemon extends Pokemon {
         switch (enemy.getType()) {
             case "fire", "ground", "rock" -> damage *= 2;
             case "grass", "water", "dragon" -> damage /= 2;
-            default -> {} //handles Water & Normal
-            // handle other types not mentioned in the switch statement
+            default -> {}
         }
         return damage;
     }
 
     // --------------------- Attacks --------------------
 
-    void surf(Pokemon name, Pokemon enemy) {
+    void surf(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 30;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Surf, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Surf against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
 
-    void hydroPump(Pokemon name, Pokemon enemy) {
+    void hydroPump(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 25;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Hydro Pump, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Hydro Pump against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
 
-    void hydroCanon(Pokemon name, Pokemon enemy) {
+    void hydroCanon(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 40;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Hydro Cannon, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Hydro Canon against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
 
-    void rainDance(Pokemon name, Pokemon enemy) {
+    void rainDance(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 5;
         int totalDamage = damageCalculator(name, enemy, damage);
         System.out.println("The pokemon uses Rain Dance.");
         if (enemy.getType().equals("electric")) {
             System.out.println("This has no effect on the " + enemy.getName());
         } else if (enemy.getType().equals("grass")) {
-            enemy.Hp += totalDamage;
+            enemy.Hp += damage;
             System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP thanks to Rain Dance.");
         } else {
             enemy.Hp -= totalDamage;
             System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
         }
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
     }
 }

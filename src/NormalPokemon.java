@@ -4,7 +4,7 @@ import java.util.List;
 public class NormalPokemon extends Pokemon {
 
     int damage;
-    List<String> attacks = Arrays.asList("tackle", "hyperbeam", "bodyslam", "headbutt");
+    List<String> attacks = Arrays.asList("confusion", "hyperbeam", "bodyslam", "headbutt");
 
     // ---------------------- Constructor ------------------
     public NormalPokemon(String name, int level, int hp, String food, String sound) {
@@ -26,48 +26,41 @@ public class NormalPokemon extends Pokemon {
         switch (enemy.getType()) {
             case "ghost" -> damage = 0;
             case "rock", "steel" -> damage /= 2;
-            default -> {} //handles Water & Normal
-            // handle other types not mentioned in the switch statement
+            default -> {}
         }
         return damage;
     }
 
     // --------------------- Attacks --------------------
-    void tackle(Pokemon name, Pokemon enemy) {
+    void confusion(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 20;
-        int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Tackle, and deals " + totalDamage + " damage.");
-        enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        boolean ifConfused = Math.random() < 0.1;
+        if (ifConfused) {
+            System.out.println(trainer.getName() + "'s "+ name.getName() + " is Confused and hits itself, and now has " + enemy.getHp() + " HP.");
+            name.Hp -= damage;
+        } else {
+            int totalDamage = damageCalculator(name, enemy, damage);
+            enemy.Hp -= totalDamage;
+            System.out.println(trainer.getName() + "'s " + name.getName() + " uses Confusion against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
+        }
     }
-    void hyperBeam(Pokemon name, Pokemon enemy) {
+    void hyperBeam(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 40;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Hyper Beam, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Hyper Beam against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    void bodySlam(Pokemon name, Pokemon enemy) {
+    void bodySlam(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 30;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Body Slam, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Body Slam against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    void headbutt(Pokemon name, Pokemon enemy) {
+    void headbutt(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 25;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Headbutt, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Headbutt against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
 }
 

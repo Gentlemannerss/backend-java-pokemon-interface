@@ -30,42 +30,31 @@ public class GrassPokemon extends Pokemon {
     }
 
     // --------------------- Attacks --------------------
-    public void leafStorm(Pokemon name, Pokemon enemy) {
+    public void leafStorm(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 30;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Leaf Storm, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Leaf Storm against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    public void solarBeam(Pokemon name, Pokemon enemy) {
+    public void solarBeam(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 40;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Solar Beam, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Solar Beam against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    public void leechSeed(Pokemon name, Pokemon enemy) {
+    public void leechSeed(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 15;
         int totalDamage = damageCalculator(name, enemy, damage);
         System.out.println("The pokemon uses Leech Seed, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
         System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
         name.Hp += totalDamage;
-        System.out.println("Name " + name.getName() + " now has " + name.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(name.getName() + " now has " + name.getHp() + " HP.");
     }
-    public void leafBlade(Pokemon name, Pokemon enemy) {
+    public void leafBlade(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 25;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Leaf Blade, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Leaf Blade against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
 }

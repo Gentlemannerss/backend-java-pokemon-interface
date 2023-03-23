@@ -30,46 +30,28 @@ public class FirePokemon extends Pokemon {
     }
 
     // --------------------- Attacks --------------------
-    void fireLash(Pokemon name, Pokemon enemy) {
+    void fireLash(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 20;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Fire Lash, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        /*
-        This would only damage the pokemon that uses the move. (usefully for confusion)
-        name.Hp -= damage;
-        System.out.println("Your " + name.getName() + " is confused and now has " + name.getHp() + " HP.");
-        */
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Fire Lash against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    void flameThrower(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonGymOwner owner) {
+    void flameThrower(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 40;
         int totalDamage = damageCalculator(name, enemy, damage);
         enemy.Hp -= totalDamage;
-        if (trainer.getName().equals(trainer.getName())) {
-            System.out.println(trainer.getName() + "'s " + name.getName() + " uses Flamethrower against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
-        } else if (owner.getName().equals(owner.getName())) {
-            System.out.println(owner.getName() + "'s " + enemy.getName() + " uses Flamethrower against " + trainer.getName() + "'s " + name.getName() + " and deals " + totalDamage + " damage." + " and now has " + name.getHp() + " HP.");
-        }
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Flamethrower against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    void pyroBall(Pokemon name, Pokemon enemy) {
+    void pyroBall(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 30;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Pyro Ball, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Pyro Ball against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
-    void inferno(Pokemon name, Pokemon enemy) {
+    void inferno(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 25;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Inferno, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
-        if (enemy.getHp()<0)
-            System.out.println(enemy.getName()+ " has fainted");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Inferno against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
     }
 }
