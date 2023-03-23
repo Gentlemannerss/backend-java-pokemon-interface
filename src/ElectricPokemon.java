@@ -51,10 +51,10 @@ public class ElectricPokemon extends Pokemon {
         if (enemy.getType().equals("electric") && name.getType().equals("electric")) {
             enemy.setHp(enemy.getHp() + 20);
             name.setHp(name.getHp() + 20);
-            System.out.println();
+            System.out.println(enemy.getName() + " & " + name.getName() + " both gain " + enemy.getHp() + name.getHp() + " HP thanks to the weather.");
         } else if (enemy.getType().equals("electric")) {
             enemy.setHp(enemy.getHp() + 20);
-            System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP thanks to the weather.");
+            System.out.println(enemy.getName() + " now has " + enemy.getHp() + " HP thanks to the weather.");
         } else if (name.getType().equals("electric")) {
             name.setHp(name.getHp() + 20);
             System.out.println(name.getName() + " now has " + name.getHp() + " HP thanks to the weather.");

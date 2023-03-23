@@ -45,11 +45,10 @@ public class GrassPokemon extends Pokemon {
     public void leechSeed(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 15;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println("The pokemon uses Leech Seed, and deals " + totalDamage + " damage.");
         enemy.Hp -= totalDamage;
-        System.out.println("Enemy " + enemy.getName() + " now has " + enemy.getHp() + " HP.");
         name.Hp += totalDamage;
-        System.out.println(name.getName() + " now has " + name.getHp() + " HP.");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Leech Seed against " + owner.getName() + "'s " + enemy.getName() + " and deals " + totalDamage + " damage." + " and now has " + enemy.getHp() + " HP.");
+        System.out.println(trainer.getName() + "'s " + name.getName() + " now has " + name.getHp() + " HP.");
     }
     public void leafBlade(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 25;
