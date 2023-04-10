@@ -161,9 +161,9 @@ public class PokemonGymImpl implements PokemonGym {
             case "fire" -> {
                 fire = new FirePokemon(pokemon.getName(), pokemon.getLevel(), pokemon.getHp(), pokemon.getFood(), pokemon.getSound());
                 switch (choosenAttack) {
-                    case "inferno" -> fire.inferno(pokemon, gymPokemon, trainer, owner);
-                    case "pyroball" -> fire.pyroBall(pokemon, gymPokemon, trainer, owner);
-                    case "firelash" -> fire.fireLash(pokemon, gymPokemon, trainer, owner);
+                    case "inferno", "1"  -> fire.inferno(pokemon, gymPokemon, trainer, owner);
+                    case "pyroball","2"  -> fire.pyroBall(pokemon, gymPokemon, trainer, owner);
+                    case "firelash","3" -> fire.fireLash(pokemon, gymPokemon, trainer, owner);
                     default -> fire.flameThrower(pokemon, gymPokemon, trainer, owner);
                 }
             }
@@ -218,7 +218,7 @@ public class PokemonGymImpl implements PokemonGym {
             case "fire" -> {
                 fire = new FirePokemon(gymPokemon.getName(), gymPokemon.getLevel(), gymPokemon.getHp(), gymPokemon.getFood(), gymPokemon.getSound());
                 String attack = fire.getAttacks().get(randomAttackByGymOwner());
-                switch (attack) {
+                switch (attack) { // de aanvallen in de volegorde van de lijst die ingegeven wordt.
                     case "inferno" -> fire.inferno(gymPokemon, pokemon, owner, trainer);
                     case "pyroBall" -> fire.pyroBall(gymPokemon, pokemon, owner, trainer);
                     case "fireLash" -> fire.fireLash(gymPokemon, pokemon, owner, trainer);

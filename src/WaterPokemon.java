@@ -56,7 +56,7 @@ public class WaterPokemon extends Pokemon {
     void rainDance(Pokemon name, Pokemon enemy, PokemonTrainer trainer, PokemonTrainer owner) {
         damage = 5;
         int totalDamage = damageCalculator(name, enemy, damage);
-        System.out.println(trainer.getName() + "'s " + name.getName() + " uses Thunder against " + owner.getName() + "'s " + enemy.getName());
+        System.out.println(trainer.getName() + "'s " + name.getName() + " uses rain dance against " + owner.getName() + "'s " + enemy.getName());
         if (enemy.getType().equals("electric")) {
             System.out.println("This has no effect on the " + enemy.getName());
         } else if (enemy.getType().equals("grass")) {
