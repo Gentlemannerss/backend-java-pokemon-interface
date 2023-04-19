@@ -20,15 +20,8 @@ Naast hun type, hebben Pokémon natuurlijk bepaalde eigenschappen met elkaar gem
 ### Afwijking van werkwijze
 
 Omdat jullie inmiddels wat verder gevorderd zijn met het programmeren met 
-`Java` gaan we jullie laten ervaren hoe het is om samen een 
-applicatie in elkaar te zetten. Jullie krijgen daarom een deel van de code van
-ons. Jullie krijgen de Main klasse en de PokemonGym klasse.
-Deze twee klassen hoeven jullie niet meer aan te passen.
-Ze staan echter wel vol met foutmeldingen. Deze foutmeldingen mogen jullie weg werken
-door klassen, methodes, variabelen, abstracte klassen en interfaces te maken (en soms een import).
-De code in de PokemonGym   
-De Methodes en Variabelen klassen bevatten hints voor deze opdracht en zullen verder
-geen deel uitmaken van de uiteindelijke applicatie.
+`Java` gaan we jullie laten ervaren hoe het is om zelf een 
+applicatie in elkaar te zetten. 
 
 #### Klassen naamgeving
 
