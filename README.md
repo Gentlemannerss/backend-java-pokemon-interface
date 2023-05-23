@@ -17,16 +17,11 @@ Naast hun type, hebben Pokémon natuurlijk bepaalde eigenschappen met elkaar gem
 ![Pokemon!](./assets/pokemon.JPG)
 
 
-### Afwijking van werkwijze
-
-Omdat jullie inmiddels wat verder gevorderd zijn met het programmeren met 
-`Java` gaan we jullie laten ervaren hoe het is om zelf een 
-applicatie in elkaar te zetten. 
 
 #### Klassen naamgeving
 
-Omdat we de belangrijkste functionaliteit al voor je hebben uitgewerkt, is het belangrijk dat je jouw
-klassen de juiste namen geeft. Kijk daarom goed in [Methodes.java](./src/Methodes.java), [Main.java](./src/Main.java) en [PokemonGymImpl.java](./src/PokemonGymImpl.java). 
+Het is belangrijk dat je jouw klassen de juiste namen geeft. 
+Kijk daarom goed in [Methodes.java](./src/Methodes.java), [Main.java](./src/Main.java) en [PokemonGymImpl.java](./src/PokemonGymImpl.java). 
 Daar worden alle klassenamen gebruikt.
 Door de methodes in [Main](./src/Main.java) en [PokemonGymImpl](./src/PokemonGymImpl.java) 
 goed te lezen, kun je voor de meeste methodes en variabelen al afleiden in welke klassen die moeten komen te staan.
